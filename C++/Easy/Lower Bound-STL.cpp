@@ -10,6 +10,7 @@ int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
     vector<int> v;
     int x,q;
+    
     cin>>q;
     for(;q!=0;--q){
         cin>>x;
@@ -18,12 +19,11 @@ int main() {
     cin>>q;
     for(;q!=0;--q){ 
         cin>>x;
-        auto itr=find(v.begin(),v.end(),x);
-        if(itr!=v.end()){
-            cout<<"Yes "<<itr-v.begin()+1<<endl;
+        auto lb =lower_bound(v.begin(), v.end(), x);
+        if(*lb==x){
+            cout<<"Yes "<<lb-v.begin()+1<<endl;
         }else{
-            itr=find_if(v.begin(),v.end(),[&](int i){return i>x;});
-            cout<<"No "<<itr-v.begin()+1<<endl;
+            cout<<"No "<<lb-v.begin()+1<<endl;
         }
     }
     return 0;
