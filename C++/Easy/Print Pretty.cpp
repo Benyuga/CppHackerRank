@@ -12,7 +12,7 @@ int main() {
 		double C; cin >> C;
         cout<<showbase;
         cout<<nouppercase<<hex<<left<<(long long) A<<endl;
-        cout<<right<<setw(15)<<setfill('_')<<showpos;
+        cout<<right<<setw(15)<<setfill('_')<<showpos<<fixed<<setprecision(2);
 		cout<<B<<endl;
         cout<<uppercase<<noshowpos<<scientific<<setprecision(9)<<C<<endl;
 	}
